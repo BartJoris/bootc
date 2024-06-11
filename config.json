@@ -1,0 +1,16 @@
+{
+    "blueprint": {
+      "customizations": {
+        "user": [
+          {
+            "name": "kenny",
+            "password": "kenny",
+            "key": "ssh-rsa AAAAB3Nz..........",
+            "groups": [
+              "wheel"
+            ]
+          }
+        ]
+      }
+    }
+   }
