@@ -8,6 +8,3 @@ RUN systemctl enable httpd mariadb php-fpm
 
 #create a cool home page!
 COPY index.php /var/www/html/
-
-#add new file to roothome
-COPY test /var/home/
