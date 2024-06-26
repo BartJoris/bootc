@@ -25,14 +25,17 @@ podman push quay.io/ktordeur/bootc:latest
 Create image:
 
 ```bash
-$ sudo podman run --rm -it --privileged \
--v .:/output \
--v $(pwd)/config.jsoßn:/config.json \
---pull newer \
-registry.redhat.io/rhel9/bootc-image-builder:9.4 \
---type qcow2 \
---config /config.json \
-quay.io/ktordeur/bootc:latest
+ sudo podman run \
+    --rm \
+    -it \
+    --privileged \
+    --pull=newer \
+    --security-opt label=type:unconfined_t \
+    -v ./config.toml:/config.toml \
+    -v ./output:/output \
+    registry.redhat.io/rhel9/bootc-image-builder:latest \
+    --type qcow2 \
+quay.io/ktordeur/bootc:test
 ```
 
 Deploy via virt-install for KVM/qemu/libvirt:
@@ -45,6 +48,20 @@ virt-install \
  --disk qcow2/disk.qcow2 \
  --import \
  --os-variant rhel9.4
+```
+
+Considering brew installed qemu on Mac:
+
+```bash
+qemu-system-aarch64 \
+    -M accel=hvf \
+    -cpu host \
+    -smp 2 \
+    -m 4096 \
+    -bios /opt/homebrew/Cellar/qemu/9.0.1/share/qemu/edk2-aarch64-code.fd \
+    -serial stdio \
+    -machine virt \
+    -snapshot /path/to/disk.qcow2
 ```
 
 Pushing an update:

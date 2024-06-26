@@ -1,0 +1,5 @@
+[[blueprint.customizations.user]]
+name = "kenny"
+password = "kenny"
+key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/BizGY75kR1RuGv9EpVUeT6ucRdYQdPaXutvYGkMc68o4HHFZOdUWw9pB1jctO+e9HjXKdDUCPlzamhoE9RwVkFk20nofMtjBwuWQud4cxO2+C3GWGRkGBrkGSaCGr8R5WE1+s4lPZQRwyrjOoPB7rRndWEaaJv0S5KvGWdPPdWkIQvT7bY9DGqAmCyuaSoAft2V5oM2ShJWPgS4xHn+96MAtJrjjk3mZWdp6JXL11RBp/8apapWFPRuuEtPwmRpsgfgB+i0EE6YC/gAutJcYuFGxlOwpnoFP89dqFC9/nOq+Vbqj/pblYYUtq6llMI8g0LuiMsFyyhHqFGJbNIG4N+DPuwqhvRr8LdsEEJMcefwHZtDpKDbHuo5z066fwxZWOpuxmgfW0TFbiO1HSI0awei6DE+6Y4s+kARH6AYwSrfWytZ3D2T6zd5Z6CMpSK+eMyAERRjuSb68p3lJj7KgMRKpDLyeWpHLDiGCyvFyyctzgIdflzgJUXuhziXPoqc= kenny@Kennys-MacBook-Pro.local"
+groups = ["wheel"]
