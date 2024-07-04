@@ -7,25 +7,25 @@ Steps:
 Build an image:
 
 ```bash
-podman build -f Containerfile -t quay.io/ktordeur/bootc:latest
+podman build -f Containerfile -t quay.io/rh_ee_bajoris/bootc:latest
 ```
 
 Test the image:
 
 ```bash
-podman run -d --rm --name lamp -p 8080:80 quay.io/ktordeur/bootc:latest /sbin/init
+podman run -d --rm --name lamp -p 8080:80 quay.io/rh_ee_bajoris/bootc:latest /sbin/init
 ```
 
 Push to registry:
 
 ```bash
-podman push quay.io/ktordeur/bootc:latest
+podman push quay.io/rh_ee_bajoris/bootc:latest
 ```
 
 Create image:
 
 ```bash
- sudo podman run \
+sudo podman run \
     --rm \
     -it \
     --privileged \
@@ -35,7 +35,7 @@ Create image:
     -v ./output:/output \
     registry.redhat.io/rhel9/bootc-image-builder:latest \
     --type qcow2 \
-quay.io/ktordeur/bootc:test
+quay.io/rh_ee_bajoris/bootc:latest
 ```
 
 Deploy via virt-install for KVM/qemu/libvirt:
